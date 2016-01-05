@@ -1,0 +1,2 @@
+module Frontdesk::DashboardHelper
+end

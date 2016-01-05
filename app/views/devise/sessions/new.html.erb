@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- BEGIN HEAD -->
+<head>
+  <meta charset="utf-8"/>
+  <title>Metronic | User Login 5</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+
+
+
+  <%= stylesheet_link_tag "themes/login", media: "all", "data-turbolinks-track" => true %>
+
+  <!-- END THEME LAYOUT STYLES -->
+
+  <link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<!-- END HEAD --><body class=" login">
+
+
+<!-- BEGIN : LOGIN PAGE 5-1 -->
+<div class="user-login-5">
+  <div class="row bs-reset">
+    <div class="col-md-6 bs-reset">
+      <div class="login-bg" style="background-image:url(<%= asset_url('bg1') %>)">
+        <%= image_tag 'logo.png', class: 'login-logo' %>
+      </div>
+    </div>
+    <div class="col-md-6 login-container bs-reset">
+      <div class="login-content">
+
+        <h1>HotelNgine</h1>
+        <p>
+          Professional hotel management system.
+        </p>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name),:html => {:class => 'login-form'}) do |f| %>
+          <div class="row">
+            <div class="col-xs-6">
+              <%= f.email_field :email, class: 'form-control login-username',placeholder: 'Login'%>
+            </div>
+            <div class="col-xs-6">
+              <%= f.password_field :password, autocomplete: 'off', placeholder: 'Password', class: 'form-control login-password'  %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="rem-password">
+                <% if devise_mapping.rememberable? -%>
+                      <%= f.check_box :remember_me, class: 'rem-checkbox' %>
+                      <%= f.label :remember_me %>
+                    <!--<p>Remember Me <input type="checkbox" class="rem-checkbox"/></p>-->
+                <% end -%>
+              </div>
+            </div>
+            <div class="col-sm-8 text-right">
+              <%= button_tag(type: 'submit', class: 'btn blue') do %>
+                  Sign In
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="login-footer">
+        <div class="row bs-reset">
+          <div class="col-xs-4 bs-reset">
+            <ul class="login-social">
+              <li><a href="javascript:;"><i class="icon-social-facebook"></i></a></li>
+              <li><a href="javascript:;"><i class="icon-social-twitter"></i></a></li>
+              <li><a href="javascript:;"><i class="icon-social-dribbble"></i></a></li>
+            </ul>
+          </div>
+          <div class="col-xs-8 bs-reset">
+            <div class="login-copyright text-right">
+              <p>Copyright &copy; <a href="http://www.skyngine.com"> SkyNgine</a> 2016</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END : LOGIN PAGE 5-1 -->
+
+<!-- BEGIN CORE PLUGINS -->
+
+<%= javascript_include_tag 'themes/login', 'data-turbolinks-track' => true %>
+
+<!-- END CORE PLUGINS -->
+<!-- END THEME LAYOUT SCRIPTS -->
+</body>
+</html>
+

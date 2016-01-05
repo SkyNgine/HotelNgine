@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<!-- BEGIN HEAD -->
+<head>
+  <meta charset="utf-8"/>
+  <title>HotelNgine | FrontDesk</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+
+  <!-- BEGIN PAGE LEVEL PLUGINS -->
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <!-- END PAGE LEVEL PLUGINS -->
+  <%= yield(:assets) %>
+  <link rel="shortcut icon" href="favicon.ico"/>
+  <%= csrf_meta_tags %>
+</head>
+<!-- END HEAD --><body class="page-header-fixed page-sidebar-closed-hide-logo page-md">
+
+
+<!-- BEGIN CONTAINER -->
+<%= yield %>
+<!-- END CONTAINER -->
+
+<!-- BEGIN CORE PLUGINS -->
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<!-- END CORE PLUGINS -->
+
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<%# javascript_include_tag 'themes/index', 'data-turbolinks-track' => true %>
+<!-- END PAGE LEVEL PLUGINS -->
+</body>
+</html>
